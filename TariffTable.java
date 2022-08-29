@@ -45,17 +45,17 @@ public class TariffTable {
 
     // ^ Obtain a String representation of this TariffTable in the form:
     public String toString() {
-        for (int i = 0; i < maxSize;) {
-            while (i < maxSize) {
-                if (this.tariffTimePeriodList[i] != null && this.tariffMoneyList[i] != null) {
-                    return String.format("%s : %s \n", this.tariffTimePeriodList[i].toString(),
-                            this.tariffMoneyList[i].toString());
-                } else {
-                    return null;
-                }
+        int i = 0;
+        for (i = 0; i < maxSize; i++) {
+            if (this.tariffTimePeriodList[i] != null && this.tariffMoneyList[i] != null) {
+                String.format("%s : %s \n", this.tariffTimePeriodList[i].toString(),
+                        this.tariffMoneyList[i].toString());
+            } else {
+                return null;
             }
         }
-        return null;
+        return String.format("%s : %s \n", this.tariffTimePeriodList[i].toString(),
+                this.tariffMoneyList[i].toString());
     }
 
 }
